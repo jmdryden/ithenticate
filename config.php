@@ -7,6 +7,7 @@
     define("LDAP_BINDDN",",ou=People,o=University of New Mexico,c=US");    
     define("MY_FILE", __DIR__."/registrations.csv");    
     define('ADMIN_EMAIL','jdryden@unm.edu');
+    //define('ADMIN_EMAIL','turnitinadmin@unm.edu');
     
     $affiliation = 'STAFF'; //third parameter to verifyCredentials and returned as $_SESSION['person'].
     $vendor_account = 'XXX87463XXX';
