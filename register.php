@@ -120,7 +120,10 @@ select {
         <div class="col2" id="container">
             <div id="primary_aside">
                 <div class="content">
-                    <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a class="active" href="index.html">iThenticate</a></li><li><a href="compare.html">iThenticate v. Turnitin</a></li></ul></div>
+                    <div id="primary_aside_1">
+                        <ul class="slidemenu" id="dept_nav">
+                            <li><a class="active" href="../index.html">iThenticate</a></li>
+                            <li><a href="../compare.html">iThenticate v. Turnitin</a></li></ul></div>
                     <div id="primary_aside_2" ></div>
                     <div id="primary_aside_3" ></div>
                     <div id="primary_aside_4" ></div>
@@ -173,7 +176,7 @@ select {
                     ?>
                     </p>
 
-                    <img alt="" class="center full_bleed" height="293" src="../common/images/header_sm.jpg" width="720" />
+                    <img alt="" class="center full_bleed" height="293" src="./images/header_sm.jpg" width="720" />
                     <div id="after_default_1" ></div>
                     <div id="after_default_2" ></div>            
               </div>

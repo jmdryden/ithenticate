@@ -1,0 +1,376 @@
+#unm_panel { z-index:10;}
+
+/* ================= HSC Turquoise Override ============*/
+/***********per Erica Capling ***************/
+
+/* Drop Nav */
+
+#dropnav {background-color: #007a86;}
+
+/* @group Drop Navigation */
+
+/* main level link hover */
+
+#dropnav a.submenu {background:url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) right -30px no-repeat; padding-left:10px !important;; padding-right:17px !important;}
+http://webcore.unm.edu
+#dropnav a.submenu:hover {background:#fff url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) right -112px no-repeat; padding-left:10px !important;; padding-right:20px}
+
+#dropnav a.current {
+    background-color:#fff;
+    color: #007a86;
+}
+#dropnav li:hover > a.submenu {
+    background:#fff url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) right -112px no-repeat; 
+}
+
+#dropnav li:hover > a {
+    background: #fff;
+    color: #666;
+}
+
+/* sub levels link hover */
+
+/* level 2 list */
+#dropnav ul {
+
+    background: #fff;
+    border: solid 1px #007a86;
+    border-top:0;
+}
+
+#dropnav ul li a.submenu {background:url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) right -70px no-repeat; padding-right:17px !important; padding-left:10px !important;}
+#dropnav ul li:hover a.submenu, #dropnav ul li a.submenu:hover {background: url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) right 11px no-repeat !important; padding-right:17px}
+
+#dropnav ul ul a:hover {
+    background: #fff !important;
+    color: #666 !important;
+}
+/* End Drop Nav */
+
+h1,h2 {
+color:#5e5d60;
+}
+
+h3,h4,h5,h6 {
+color:#5e5d60;
+}
+a, a:link {
+    color: #007a86;
+}
+
+a:visited {
+    color: #063539;
+}
+
+a:hover {
+    color: #c10037;
+}
+
+ul.slidemenu li a:hover {
+    background-color: #007a86;
+}
+
+ul.slidemenu li.submenu > a:hover {
+    background: #007a86 url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) 0 9px no-repeat;
+    
+}
+
+ul.slidemenu li.openMenu > a:hover {
+    background: #007a86 url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) 0 -32px no-repeat;
+}
+
+ul.slidemenu li.submenu > a {
+   background: url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) 0 -72px no-repeat;
+}
+
+ul.slidemenu li.openMenu > a {
+   background: #555 url(http://webcore.unm.edu/v1/images/unm-hsc-navsprites.gif) 0 -32px no-repeat;
+   color: #fff;
+}
+
+.quickfindarea h2 {
+    color: #007a86;
+}
+
+.quickfindarea ul li a:hover {
+    color: #007a86
+}
+
+.quicklist h2 {
+    color: #007a86;
+}
+.quicklist ul li a:hover {
+    color: #007a86
+}
+
+.cherry {
+    color:#007a86;
+}Content Render
+#unm_alert {
+    background: #007a86 url(http://webcore.unm.edu/v1/images/message_icons/alert.png) 60px 10px no-repeat;
+}
+
+.unm_header_title a {color:#fff;}
+
+FIELDSET { border-top : 2px solid #007a86;}
+label.error { color:#007a86;}
+INPUT[type="button"],INPUT[type="submit"], INPUT[type="reset"], button, button:visited, .button, .button:visited {
+background-color: #007a86;}
+
+/* ==================================== HOMEPAGE SPECIAL EFFECTS=================================== */
+
+/* HOMEPAGE FEATURE BOX */
+
+#featured {
+height: 340px; 
+background-color: #007A86;  
+color: #fff;
+font-size: 110%;
+font-weight: normal;
+text-decoration:none;
+padding: 20px 20px 20px 20px;
+}
+
+a.featured:link, a.featured:visited, a.featured:hover {
+color: #fff;
+font-size: 110%;
+font-weight: bold;
+text-decoration:none;
+}
+
+/* HOMEPAGE NEWS HEADLINE */
+h1.featured, h3.featured {
+color: #ffffff;
+}
+
+#swoop {
+margin-top: -5px;
+margin-bottom: -5px;
+}
+
+#homenav {
+height: 300px; 
+background-color: #eee;
+padding: 20px 20px 20px 20px;
+font-size: 95%;
+}
+
+a.homenav:link, a.homenav:visited, a.homenav:hover {
+font-size: 95%;
+color: #007a86;
+font-weight:normal;
+text-decoration:none;
+}
+
+a.homenav:hover {
+    font-weight: bold;
+}
+
+/* ==================================== TYPOGRAPHY AND IMAGES ============================= */
+
+
+p.nobase {
+font-size:1em;
+margin:0 0 0;
+}
+
+#pixright {
+float:right;
+padding-left: 20px;
+}
+
+#pixleft {
+float:left;
+padding-right: 20px;
+}
+
+#boxright {
+float:right;
+width:200px;
+padding-left: 20px;
+}
+
+#boxleft300 {
+float:left;
+width:300px;
+}
+
+#mugs {
+float:right;
+padding:1pt 0pt 0pt 5pt;
+border: thin;
+}
+
+#boxmugs {
+padding-left: 30px;
+}
+
+p.caption {
+font-weight:bold;
+text-align:center;
+}
+
+
+
+
+/* ==============COLUMNS =================== */
+
+/*master box for multiple cols */
+
+#submaster {
+float:left;
+width:100%;
+border-top: 1px dotted #ccc;
+padding-top: 20px;
+}
+
+
+/*master box for multiple cols, no bottom border */
+
+#submasterx {
+float:left;
+width:100%;
+padding-top: 20px;
+}
+
+
+
+/*Two unequal columns, no specs */
+
+#imleft {
+float:left;
+}
+
+#imright {
+float:right;
+text-align:right;
+}
+
+
+/*Two equal columns */
+
+#subleft {
+float:left;
+width:47%;
+padding-right: 8px;
+}
+
+#subright {
+float:right;
+width:47%;
+border-left: 1px dotted #ccc;
+padding-left: 20px;
+}
+
+#subrightx {
+float:right;
+width:47%;
+border-left: none;
+padding-left: 20px;
+}
+
+
+/*three columns with dividers*/
+
+#deptthree1 {
+float:left;
+width:30%;
+border-right: 1px dotted #ccc;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#deptthree2  {
+float:left;
+width:30%;
+border-right: 1px dotted #ccc;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#deptthree3 {
+float:left;
+width:30%;
+padding-left: 15px;
+}
+
+/*three columns with dividers, bulleted content*/
+
+#dept3bullet1 {
+float:left;
+width:28%;
+border-right: 1px dotted #ccc;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#dept3bullet2  {
+float:left;
+width:28%;
+border-right: 1px dotted #ccc;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+#dept3bullet3 {
+float:left;
+width:28%;
+padding-left: 15px;
+}
+
+
+
+/*three columns no dividers*/
+
+#deptthree1x {
+float:left;
+width:25%;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#deptthree2x  {
+float:left;
+width:25%;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+#deptthree3x {
+float:left;
+width:25%;
+padding-left: 20px;
+}
+
+
+
+
+/*Four columns*/
+
+#deptnav1 {
+float:left;
+width:23%;
+border-right: 1px dotted #ccc;
+padding-left: 20px;
+}
+
+#deptnav2 {
+float:left;
+width:23%;
+border-right: 1px dotted #ccc;
+padding-left: 20px;
+}
+
+#deptnav3 {
+float:left;
+width:23%;
+border-right: 1px dotted #ccc;
+padding-left: 20px;
+}
+
+#deptnav4 {
+float:left;
+width:20%;
+padding-left: 20px;
+}
+

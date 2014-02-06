@@ -1,0 +1,91 @@
+/* Site CSS */
+
+.content h2 { clear: both; }
+.content ol, .content ul { line-height: 150%; }
+
+/*Random Formatting*/
+hr { border: 1px solid #ddd; }
+.center { text-align: center; margin: 0 auto; }
+.full_bleed { margin: 0; margin: 0 auto; padding: 0; margin-left: -20px; }
+
+/* "What is TurnItIn?" Section on the home page */
+#whatis { width: 680px; clear:both; }
+#whatis div { min-height: 250px; }
+#whatis .left { float: left; text-align: left; width: 450px; clear: none; }
+#whatis .right { float: left; width: 194px; clear: right; }
+
+/* "What is the Cost"? Section on the home page */
+#whatcost { width: 680px; margin: 0 auto; text-align: center; }
+#whatcost div {
+    width: 300px;
+    min-height: 180px;
+    float:left;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: #fff;
+    margin-bottom: 15px;
+    box-shadow: 0px 3px 0px #ababab;
+}
+
+#whatcost h3, #whatcost p { padding: 10px 20px; }
+#whatcost h3 { text-shadow: 0px 2px 0px #333; font-size: 1.6em; padding-bottom: 0px; }
+#whatcost p { text-align: left; }
+
+#whatcost .left { margin-right: 60px; background-color: #C10037; }
+#whatcost .right { background-color: #007A86; }
+
+/*
+#cost {
+    display: block;
+    height: 76px;
+    width: 76px;
+    position: relative;
+    z-index: 1000;
+    float:right;
+    margin-top: -140px;
+    margin-right: -67px;
+} */
+
+/* UNUSED Request Account Button UNUSED */
+#request_account {    
+    background: url(../images/request.png) 0 0 no-repeat;
+    display: block;
+    width: 200px;
+    height: 64px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+    text-indent: -5000px;
+}
+#request_account:hover { background-position: 0 100%; }
+
+input#bigbutton {
+width:194px;
+height:284px;
+background: #crimson; /*the colour of the button*/
+padding: 8px 14px 10px; /*apply some padding inside the button*/
+border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+/*style the text*/
+font-size:1.5em;
+font-family:  "Lucida Sans Unicode", "Lucida Grande"; 
+letter-spacing:.1em;
+text-shadow: 0 -2px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+color: #fff;
+/*give the corners a small curve*/
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+border-radius: 15px;
+}
+/***SET THE BUTTON'S HOVER AND FOCUS STATES***/
+input#bigbutton:hover, input#bigbutton:focus {
+color:#dfe7ea;
+/*reduce the size of the shadow to give a pushed effect*/
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
