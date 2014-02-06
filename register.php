@@ -119,43 +119,14 @@ select {
         
         <div class="col2" id="container">
             <div id="primary_aside">
-                <div class="content">                    
-                    <div id="primary_aside_2">
-                        <ul class="slidemenu" id="dept_nav">
-                            <li><a class="active" href="../index.html">iThenticate Home</a></li>
-                            <li class="openMenu submenu"><a href="training/setup.html">Training</a>
-                                <ul>
-                                    <li><a href="../training/setup.html">Account Setup</a></li>
-                                    <li><a href="../training/submit.html">Submit a Paper</a></li>
-                                    <li><a href="../training/problems.html">Checking for Problems</a></li>
-                                    <li><a href="../training/resubmit.html">Resubmit a Paper</a></li>
-                                    <li><a href="../training/review.html">Reviewing a Graded Paper</a></li>
-                                    <li><a href="../training/enroll.html">Enrolling in Other Classes</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div id="primary_aside_3">
-                        <ul class="slidemenu" id="side_links">
-                            <li class="submenu"><a href="#">UNM Resources</a>
-                                <ul>
-                                    <li><a href="http://caps.unm.edu/">CAPS</a></li>
-                                    <li><a href="http://caps.unm.edu/writing/about/undergrad/">Undergraduate Writing Center</a></li>
-                                    <li><a href="http://caps.unm.edu/writing/grad#writing">Graduate Student Writing Help</a></li>
-                                    <li><a href="http://www.unm.edu/grad/grc/grc.html">Graduate Resource Center</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu"><a href="#">iThenticate resources
-                                    <li><a href="http://www.ithenticate.com/">iThenticate</a></li>
-                                    <li><a href="http://ithenticate.com/en_us/training/getting-started">Live Walk-through Training</a></li>
-                                    <li><a href="http://www.ithenticate.com/help/helpdesk.asp">Help Desk Request</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div> <!-- end of class-content -->
-            </div> <!-- end of id=primary-aside -->
-    
+                <div class="content">
+                    <div id="primary_aside_1"><ul class="slidemenu" id="dept_nav"><li><a class="active" href="index.html">iThenticate</a></li><li><a href="compare.html">iThenticate v. Turnitin</a></li></ul></div>
+                    <div id="primary_aside_2" ></div>
+                    <div id="primary_aside_3" ></div>
+                    <div id="primary_aside_4" ></div>
+                </div>
+            </div>
+
             <div id="content_top">
                 <div class="content">
                     <ul id="unm_breadcrumbs">
@@ -187,7 +158,7 @@ select {
                             
                             if ($_SESSION['person']) {
                                 
-                                $res = newUserEmail($_REQUEST, $tii_account, $tii_password);
+                                $res = newUserEmail($_REQUEST);
                                 adminEmail($_REQUEST, $tii_account, $tii_password);
                                 insertToFile($_REQUEST);
 
@@ -300,27 +271,17 @@ function show_form($person) {
     
 }
 
-function newUserEmail($_REQUEST, $vendor_account = 'acctXXXXXXX', $vendor_password = 'your_password'){        
+function newUserEmail($_REQUEST){        
                 
         $from = "swdist@unm.edu";                                                
         $subj =  "Your iThenticate set-up is almost complete!";
         
-        $message = "Your ithenticate request has been processed and access has been granted. The last step is to create a personal account and associate it with the UNM master account. 
-            Please go to [NEED to FILL-IN with iThenticate specific URL, or directions for next steps.]:\r\n<br />";          
-        $message .= "\r\n<br />";                
-        $message .= "Account ID: " . $vendor_account . "\r\n<br />";
-        $message .= "Join password: " . $vendor_password . "\r\n<br />";
-        $message .= "NEED specific iThenticate language here...\r\n<br />";        
+        $message = "Your iThenticate registration request will soon be processed and you will receive an email containing your iThenticate password.            
+            You will receive specific instructions for resetting your password and accessing your new account.\r\n<br />";  
+        $message .= "\r\n<br />";                                       
+        $message .= "Please do not reply to this message. If you need assistance, please contact UNM IT Software Distribution (<a href=\"http://it.unm.edu/software/\">http://it.unm.edu/software/</a>) or call (505) 277-8122.\r\n<br />";
         $message .= "\r\n<br />";
-        $message .= "For more information about how to create your account, see FastInfo #xxxx at <a href=\"https://unm.custhelp.com/app/answers/detail/a_id/xxxx\">https://unm.custhelp.com/app/answers/detail/a_id/xxxx.</a>.\r\n<br />";
-        $message .= "\r\n<br />";
-        $message .= "For more information about how to use iThenticate, see FastInfo #xxxx at <a href=\"https://unm.custhelp.com/app/answers/detail/a_id/xxxx\">https://unm.custhelp.com/app/answers/detail/a_id/xxxx</a>\r\n<br />";
-        $message .= "\r\n<br />";
-        $message .= "Please do not reply to this message. For all other assistance, please contact the UNM IT Service Desk via Help.UNM (<a href=\"http://help.unm.edu\">http://help.unm.edu</a>) or call (505) 277-5757.\r\n<br />";
-        $message .= "\r\n<br />";
-        $message .= "UNM IT Service Desk Support\r\n<br />";
-        $message .= "\t * Search the FastInfo knowledge base by Answer ID # or keyword iThenticate - <a href=\"http://fastinfo.unm.edu\">http://fastinfo.unm.edu</a>\r\n<br />";
-        $message .= "\t * Enter a Service Request at Help.UNM (<a href=\"http://help.unm.edu\">http://help.unm.edu</a>)\r\n<br />";
+        $message .= "UNM IT Software Distribution\r\n<br />";                
                 
         $headers = "From: ".$from."\r\n";
         $headers .= "Return-path: ".$from."\r\n";
@@ -335,26 +296,28 @@ function newUserEmail($_REQUEST, $vendor_account = 'acctXXXXXXX', $vendor_passwo
         
         echo '<div style="margin-bottom: 150px; font-size:14px;">
                     <h2>Thank you for your registration request!</h2>
-                    Your iThenticate request has been sent. An email message containing the product key and instructions
+                    Your iThenticate request has been sent. An email message containing the password and instructions
                     for completing your iThenticate setup will follow. If you have questions, please contact the IT Service Desk.
               </div>';
     
 }    
 
-function adminEmail($_REQUEST, $vendor_account = 'acctXXXXXXX', $vendor_password = 'your_password'){        
+function adminEmail($_REQUEST){        
     
         $today = date('Y-m-d H:i:s');
                 
-        $from = "swdist@unm.edu";                                        
+        $from = "<no_reply@unm.edu>";                                        
         $subj =  "New ithenticate account submission!";
         
         $message = "For your information, the following information was registered on the UNM iThenticate account registration page:\r\n<br />";          
         $message .= "\r\n<br />";                         
         $message .= "date: " . $today;
+        $message .= "\r\n<br />";                         
         $message .= "Name: " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "\r\n<br />";
         $message .= "Email address: " . $_SESSION['mail'] . "\r\n<br />";
         $message .= "Department: " . $_SESSION['dept'] . "\r\n<br />";                          
-        $message .= "Please do not reply to this message.\r\n<br />";
+        $message .= "\r\n<br />";                         
+        $message .= "This message was generated via the iThenticate registration page. Please do not reply to this message.\r\n<br />";
         $message .= "\r\n<br />";        
                 
         $headers = "From: ".$from."\r\n";
