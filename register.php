@@ -24,7 +24,7 @@
 <script src="https://webcore.unm.edu/v1/javascript/unm_scripts.php" type="text/javascript" ></script>
 
 <!-- Site Meta - put site specific css, javascript, etc. here-->
-<meta content="TiThenticate allows faculty and students to check written work against a large database of academic materials for originality. 
+<meta content="iThenticate allows faculty and students to check written work against a large database of academic materials for originality. 
       iThenticatei also checks written work against content that can be found on the internet." name="description" />
 <meta content="unm, university of new mexico, albuquerque, plagarism, antiplagarism, papers, academic integrity, iThenticate" name="keywords" />
 
