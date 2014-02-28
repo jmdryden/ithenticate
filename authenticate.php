@@ -21,7 +21,8 @@ if ($_POST['submit'] == 'LOGIN')  {
         
         if (verifyCredentials($username,$password,$affiliation)) {
             
-                 header('Location: /_app/register.php?');
+                 //header('Location: /_app/register.php?');
+                 header('Location: ' . MY_HEADER_REDIRECT);
                 //$_error = '<div id="status" class="errors">Debug: Verified Credential, go on to registration: http://turnitin.unm.edu/register.php? </div><br/>';                
                     
         } else {      
@@ -71,21 +72,18 @@ echo '
                     <h2>Enter your NetID and Password</h2>                                                       
                     <div class="row">
                         <label for="username"><span class="accesskey">N</span>etID:</label>
-                        <input id="username" name="username" class="required" tabindex="1" accesskey="n" type="text" value="" size="25
-    " autocomplete="false"/>
+                        <input id="username" name="username" class="required" tabindex="1" accesskey="n" type="text" value="" size="25" autocomplete="false"/>
                     </div>
                     <div class="row">
                         <label for="password"><span class="accesskey">P</span>assword:</label>
-                        <input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size
-    ="25" autocomplete="off"/>
+                        <input id="password" name="password" class="required" tabindex="2" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
                     </div>
                     <div class="row check">
                         <input id="warn" name="warn" value="true" tabindex="3" accesskey="w" type="checkbox" />
                         <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label>
                     </div>
                     <div class="row btn-row">
-                        <input type="hidden" name="lt" value="_cB4A1B38D-DE2F-7129-E99B-BD9999EBD7E7_kEADAC7DC-CF12-E4D3-A060-1D6A407C
-    7F87" />
+                        <input type="hidden" name="lt" value="_cB4A1B38D-DE2F-7129-E99B-BD9999EBD7E7_kEADAC7DC-CF12-E4D3-A060-1D6A407C7F87" />
                         <input type="hidden" name="_eventId" value="submit" />
                         <input class="btn-submit" name="submit" accesskey="l" value="LOGIN" tabindex="4" type="submit" />
                         <input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="5" type="reset" />
@@ -116,24 +114,29 @@ echo '
 ';
 
 function verifyCredentials($username,$password,$affiliation) {
-    
+    // New LDAP method...
+    // global $config; 
     $success = false; // to return true, supplied username/password must bind
     if (empty($username) || empty($password))
-        return false;    
+        return false;
+   
+    $connect = ldap_connect(LDAP_HOST);                        
     
-    $connect = ldap_connect(LDAP_HOST);                    
-    
-    if ($connect) {        
+    if ($connect) {
         
-        $bind = ldap_bind($connect, 'UID=' . $username . '' . LDAP_BINDDN, $password);
-        if ($bind) {   
-            //$read = ldap_search($connect, 'ou=People,o=University of New Mexico,c=US', "UID=".$username);
-            $read = ldap_search($connect, LDAP_BASEDN, "UID=".$username);
-            $info = ldap_get_entries($connect, $read);
+        // Bind with aci account credentials 
+        //$bind = ldap_bind($connect, 'UID=' . $username . '' . LDAP_BINDDN, $password);
+        $bind = ldap_bind($connect, 'uid=webteamapps,ou=SystemAccounts,o=university of new mexico,c=us', '3vT#mgb4');
+        if ($bind) {            
             
-            if ($info['count'] != 1) {                                 
+            $read = ldap_search($connect, LDAP_BASEDN, "UID=".$username);                    
+            $info = ldap_get_entries($connect, $read);
+
+            if ($info['count'] != 1) {
+                // Username not found or multiple found
                 return false;							
-            } elseif (ldap_bind($connect, $info[0]['dn'], $password)) {	
+            } elseif (@ldap_bind($connect, $info[0]['dn'], $password)) {
+                
                 
                 $key = array_search($affiliation, $info[0]['edupersonaffiliation']);
                     
@@ -144,21 +147,18 @@ function verifyCredentials($username,$password,$affiliation) {
                 $_SESSION['mail'] = $info[0]['mail'][0];
                 $_SESSION['dept'] = $info[0]['ou'][0];
                 
-                $success = true;                    
+                $success = true;                       
                 
             }
         }
         
-        ldap_close($connect);           // Close ldap connection
-        
-    } //end CONNECT
+        ldap_close($connect);                   
+    } 
 
-    if ($success)  {        
-        return true;        
-    } else {
-        return false;	
-    
-    }
+    if ($success)
+        return true;
+    else
+        return false;					
 }
 
 ?>
