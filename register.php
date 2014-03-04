@@ -132,7 +132,7 @@
 ?>
         </p>
 
-        <img alt="" class="center full_bleed" height="293" src="../common/images/header_sm.jpg" width="720" />
+        <img alt="" class="center full_bleed" height="293" src="./common/images/header_sm.jpg" width="720" />
         <div id="after_default_1" ></div>
         <div id="after_default_2" ></div>            
         </div>
