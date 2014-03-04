@@ -32,17 +32,15 @@
         
         //function does view decision making on 'staff' or 'faculty'.                             
         echo(isset($_SESSION['person']) ? '<h1>iThenticate account registration</h1><hr />'  : '<h1>Access is restricted<hr></h1>');
-        echo(show_form($_SESSION['person'], $affiliation));                            
+        echo(show_form($person));                            
         
         
     } else { //We are POSTING and calling service.                            
                             
-        $v = new xmlrpcval( 
-                            array(			                            
+        $v = new xmlrpcval( array(			                            
                                     "password" => new xmlrpcval($service_api_password), //account #36346 is prod
                                     "username" => new xmlrpcval($service_api_user)
-                                  ), 
-                    "struct");        
+                                  ), "struct");        
                             
         $action = new xmlrpcmsg('login', array(php_xmlrpc_encode($v))); //returns the formatted xmlrpcval		
                             
@@ -169,10 +167,10 @@
 <?php
 //Utility functions
 
-function show_form($person,$affiliation) { 
+function show_form($person) { 
     
     //if ($person != ('faculty' || 'staff') ) {    
-    if ($person !== $affiliation ) {        
+    if ($person == 'NOTFOUND' ) {        
  
         if (DEBUG == 1) {
             echo "<strong>DEBUGGING</strong><br />";
@@ -185,7 +183,7 @@ function show_form($person,$affiliation) {
         $form = '
             <p>
                 <div style="margin-bottom: 150px; font-size:14px;">                    
-                    <strong>Use of this service is available only to UNM teaching faculty</strong>. 
+                    <strong>Sorry, use of this service is available only to UNM teaching faculty.</strong> 
                     Please contact the <a href="http://it.unm.edu/support">IT CSS Service Desk</a> if you have a question.
                 </div>
             </p>

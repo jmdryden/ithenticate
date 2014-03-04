@@ -20,7 +20,7 @@
     //define('ADMIN_EMAIL','jdryden@unm.edu'); 
     define('ADMIN_EMAIL','swdist@unm.edu');    //switch for production
     $htmlTitle = "iThenticate | The University of New Mexico";
-    $affiliation = 'staff'; //third parameter to verifyCredentials
+    $affiliation = array("staff", "faculty"); 
     
     //ITHENTICATE SERVICE CREDENTIALS
     $service_api_user = 'jdryden@unm.edu';

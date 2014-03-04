@@ -137,11 +137,18 @@ function verifyCredentials($username,$password,$affiliation) {
                 return false;							
             } elseif (@ldap_bind($connect, $info[0]['dn'], $password)) {
                 
-                
                 $key = array_search($affiliation, $info[0]['edupersonaffiliation']);
+                
+                foreach ($affiliation as $i => $val) {
+                    if (in_array(strtoupper($val), $info[0]['edupersonaffiliation'])) {
+                        $_SESSION['person'] = $val;
+                        break;
+                    } else {
+                        $_SESSION['person'] = "NOTFOUND";
+                    }   
                     
-                // 'person' will not be set if needle is not matched.
-                $_SESSION['person'] = strtolower($info[0]['edupersonaffiliation'][$key]);
+                }
+                
                 $_SESSION['fname'] = $info[0]['givenname'][0];
                 $_SESSION['lname'] = $info[0]['sn'][0];
                 $_SESSION['mail'] = $info[0]['mail'][0];
