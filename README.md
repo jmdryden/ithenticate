@@ -2,24 +2,17 @@
 
 ## jdryden@unm.edu - University of New Mexico ##
 
-* Summary of set up
-Simple Web Page script for UNM Faculty to login and send a registration attempt to the ithenticate.com site.
+### Summary of set up ###
+* Simple Web Page script for UNM Faculty to login and send a registration attempt to the ithenticate.com site.
 
-* Configuration
-Needs iThenticate API Administrative account (Libby), LDAP service account with search privilege (Farid)
+### Configuration ###
+* Needs iThenticate API Administrative account (Libby), LDAP service account with search privilege (Farid)
 
-* Dependencies
-Apache 2; PHP 5.4; PHP cURL; 
+### Dependencies ###
+* Apache 2; PHP 5.4; PHP cURL; 
 
-* Database configuration
-None
-
-* How to run tests
-
-* Deployment instructions
-
-### Contribution guidelines ###
-
+### Database configuration ###
+* None
 
 ### Who do I talk to? ###
 
