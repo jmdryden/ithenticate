@@ -119,8 +119,8 @@
             
             echo "<h2>Thank you. Your ithenticate.com account has been created!</h2>";            
             echo('An email message has been sent to: "'.$_SESSION['mail'].'", with login instructions.
-                If you have questions, please contact the IT Software distribution desk. 
-                Please <a href=\"'.$_SERVER['PHP_SELF'].'"?action=logout\">logout</a><br />');
+                If you have questions, please contact the IT Software distribution desk.                 
+                Please <a href="http://ithenticate.unm.edu?action=logout">logout</a><br />');
                 
         }
 
