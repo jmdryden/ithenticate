@@ -77,7 +77,7 @@
                                 
             foreach ($list['users'] as $i => $v) {
                 //if ($v['email'] == $_REQUEST['email']) {
-                if ($v['email'] == $_REQUEST['mail']) {
+                if (strtolower($v['email']) == strtolower($_REQUEST['mail'])) {
                     echo "<h2>Error: cannot create account.</h2>";            
                     die("<h4><strong>Your email address is already associated with a user account, perhaps you have previously
                         created a registration. Please <a href=\"".$_SERVER['PHP_SELF']."?action=logout\">logout</a> and contact Software Distribution Staff if you have a question.</h3>");
@@ -114,7 +114,7 @@
                 echo("Error: " . $val);
             } 
         } else { //user add completed
-            
+                        
             adminEmail($_REQUEST);
             
             echo "<h2>Thank you. Your ithenticate.com account has been created!</h2>";            
