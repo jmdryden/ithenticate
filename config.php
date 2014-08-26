@@ -15,17 +15,17 @@
     define("LDAP_BASEDN","ou=People,o=University of New Mexico,c=US");
     define("LDAP_BINDDN",",ou=People,o=University of New Mexico,c=US");    
     define("MY_FILE", __DIR__."/registrations.csv");    
-    define("BASE_DIR","/"); //switch off for production host.
-    define("MY_HEADER_REDIRECT", "/_app/register.php");
-    //define('ADMIN_EMAIL','jdryden@unm.edu'); 
-    define('ADMIN_EMAIL','swdist@unm.edu');    //switch for production
+    define("BASE_DIR","/ithenticate"); //switch off for production host.
+    define("MY_HEADER_REDIRECT", "/ithenticate/_app/register.php");
+    define('ADMIN_EMAIL','jdryden@unm.edu'); 
+    //define('ADMIN_EMAIL','swdist@unm.edu');    //switch for production
     $htmlTitle = "iThenticate | The University of New Mexico";
     $affiliation = array("student","employee","staff","faculty"); 
     
     //ITHENTICATE SERVICE CREDENTIALS
     $service_api_user = 'jdryden@unm.edu';
-    $service_api_password = "dghLmP822"; //prod do not test
-    //$service_api_password = 'br_549'; //switch to br_549 for testing
+    //$service_api_password = "dghLmP822"; //prod do not test
+    $service_api_password = 'br_549'; //switch to br_549 for testing
     $service_api_url = "api.ithenticate.com";     
     
 ?>

@@ -91,7 +91,7 @@
                                             "first_name" => new xmlrpcval($_SESSION['fname']),
                                             "last_name" => new xmlrpcval($_SESSION['lname']),                                            
                                             "email" => new xmlrpcval($_SESSION['mail']),
-                                            "password" => new xmlrpcval($my_password),
+                                            //"password" => new xmlrpcval($my_password),
                                             "timezone" => new xmlrpcval('371')
                                             ), "struct");
 
