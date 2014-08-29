@@ -16,5 +16,5 @@
 
 ### Who do I talk to? ###
 
-* Sponsor for functional things: Elizabeth henry
+* Sponsor for functional things and help with licensing: Elizabeth Henry
 * FastInfos: https://unm.custhelp.com/app/answers/detail/a_id/7279/kw/ithenticate
