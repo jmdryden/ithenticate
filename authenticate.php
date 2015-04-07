@@ -126,7 +126,7 @@ function verifyCredentials($username,$password,$affiliation) {
         
         // Bind with aci account credentials 
         //$bind = ldap_bind($connect, 'UID=' . $username . '' . LDAP_BINDDN, $password);
-        $bind = ldap_bind($connect, 'uid=webteamapps,ou=SystemAccounts,o=university of new mexico,c=us', '3vT#mgb4');
+        $bind = ldap_bind($connect, 'uid=webteamapps,ou=SystemAccounts,o=university of new mexico,c=us', 'XXXXXXXXXXXX');
         if ($bind) {            
             
             $read = ldap_search($connect, LDAP_BASEDN, "UID=".$username);                    
