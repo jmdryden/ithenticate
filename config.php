@@ -24,8 +24,8 @@
     
     //ITHENTICATE SERVICE CREDENTIALS
     $service_api_user = 'jdryden@unm.edu';
-    $service_api_password = "dghLmP822"; //prod do not test
-    //$service_api_password = 'br_549'; //switch to br_549 for testing
+    $service_api_password = "XXXXXXXXXX"; //prod do not test
+    //$service_api_password = 'XXXXXXXXXX'; //switch to br_549 for testing
     $service_api_url = "api.ithenticate.com";         
 
 ?>
